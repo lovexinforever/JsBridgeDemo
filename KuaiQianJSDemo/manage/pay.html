@@ -1,0 +1,53 @@
+﻿
+<div class="wrapcontent">
+	<div class="contentArea">
+		<div class="contentArea_child" id = "contentArea_child">
+		   
+			
+			<input id="appId" class="input top10" text="text" placeholder="请输入appId"/>
+			<input id="businessName" class="input top10" text="text" placeholder="请输入businessName"/>
+			<input id="payOrderId" class="input top10" text="text" placeholder="请输入payOrderId"/>
+			<input id="productCode" class="input top10" text="text" placeholder="请输入productCode"/>
+			<input id="merchantId" class="input top10" text="text" placeholder="请输入merchantId"/>
+			<input id="merchantOrderId" class="input top10" text="text" placeholder="请输入merchantOrderId"/>
+			<div class = "bottom10">
+			<div id="goNext" class = "page_color page_style bottom10" onclick="pay()">
+	     			支付
+	     		</div>
+				</div>
+	      </div>
+	     
+	</div>
+	
+</div>
+
+<script>
+$("html,body").animate({scrollTop:0});
+function pay() {
+    kuaiqian.pay({
+
+		  appId: $("#appId").val() , 
+
+		  businessName: $("#businessName").val() , 
+
+		  payOrderId: $("#payOrderId").val() , 
+
+		  productCode: $("#productCode").val(), 
+
+		  merchantId: $("#merchantId").val(), 
+
+		  merchantOrderId: $("#merchantOrderId").val(), 
+
+			success: function(res) {  
+			alert(res.msg);
+		  },
+
+		  error:function(res) { 
+			alert(res.msg);
+		  }
+		  })
+
+}
+
+</script>
+

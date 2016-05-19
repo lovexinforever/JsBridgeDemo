@@ -1,0 +1,29 @@
+﻿<div class="wrapcontent">
+	<div class="contentArea">
+		<div class="contentArea_child" id = "contentArea_child">
+		   
+			
+			<input id="phoneNum" class="input top10" text="text" placeholder="请输入电话号码"/>
+			<div class = "bottom10">
+			<div id="goNext" class = "page_color page_style" onclick="call()">
+	     			拨打
+	     		</div>
+				</div>
+	      </div>
+	     
+	</div>
+	
+</div>
+
+<script>
+$("html,body").animate({scrollTop:0});
+function call() {
+      kuaiqian.tel({
+
+			  phoneNum: "1111",
+
+			  error: function(res){  }})
+}
+
+</script>
+

@@ -1,0 +1,50 @@
+
+<div class="wrapcontent">
+	<div class="contentArea">
+		<div class="contentArea_child" id = "contentArea_child">
+		   
+			
+			<input id="iconUrl" class="input top10" text="text" placeholder="ÇëÊäÈëiconUrl"/>
+			<input id="name" class="input top10" text="text" placeholder="ÇëÊäÈëname"/>
+			<input id="needRealName" class="input top10" text="text" placeholder="ÇëÊäÈëneedRealName"/>
+			<input id="jumpTarget" class="input top10" text="text" placeholder="ÇëÊäÈëproductCode"/>
+			<input id="jumpMode" class="input top10" text="text" placeholder="ÇëÊäÈëjumpMode"/>
+			<input id="merchantOrderId" class="input top10" text="text" placeholder="ÇëÊäÈëmerchantOrderId"/>
+			<div id="goNext" class = "page_color page_style bottom10" onclick="pay()">
+	     			Ö§¸¶
+	     		</div>
+	      </div>
+	     
+	</div>
+	
+</div>
+
+<script>
+function pay() {
+    kuaiqian.pay({
+
+		  appId: $("#appId").val() , 
+
+		  businessName: $("#businessName").val() , 
+
+		  payOrderId: $("#payOrderId").val() , 
+
+		  productCode: $("#productCode").val(), 
+
+		  merchantId: $("#merchantId").val(), 
+
+		  merchantOrderId: $("#merchantOrderId").val(), 
+
+			success: function(res) {  
+			alert(res.msg);
+		  },
+
+		  error:function(res) { 
+			alert(res.msg);
+		  }
+		  })
+
+}
+
+</script>
+
